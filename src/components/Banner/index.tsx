@@ -1,4 +1,4 @@
-import { Flex, Image, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text, VStack } from "@chakra-ui/react";
 
 export function Banner() {
   return (
@@ -11,10 +11,10 @@ export function Banner() {
       align="center"
     >
       <VStack spacing={5} maxW={520} align="flex-start" color="gray.50">
-        <Text fontSize="2.25rem">
+        <Heading fontWeight="500">
           5 Continentes,
           <Text>infinitas possibilidades.</Text>
-        </Text>
+        </Heading>
         <Text fontSize="1.25rem">
           Chegou a hora de tirar do papel a viagem que você sempre sonhou.
         </Text>
