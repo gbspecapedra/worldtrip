@@ -44,6 +44,7 @@ This project was developed with the following technologies:
 - [React](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Chakra UI](https://sass-lang.com/)
+- [json-server](https://github.com/typicode/json-server)
 
 ## 🔖 Layout
 
@@ -62,6 +63,9 @@ $ cd worldtrip
 
 # Install dependencies
 $ yarn
+
+# Run the fake api
+$ yarn server
 
 # Run the development server
 $ yarn dev
