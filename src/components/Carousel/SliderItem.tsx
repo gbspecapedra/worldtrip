@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import {
-  Box,
   Flex,
   Heading,
   Link as ChakraLink,
@@ -9,15 +8,21 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export function SliderItem() {
+import { Continent } from "../../pages";
+
+interface SliderItemProps {
+  continent: Continent;
+}
+
+export function SliderItem({ continent }: SliderItemProps) {
   return (
     <Flex
       h="450px"
       justify="center"
       align="center"
-      backgroundImage={`url('/images/europa/call.png')`}
+      bgImage={`url('${continent.callImage}')`}
     >
-      <Link href="/" passHref>
+      <Link href={`/continent/${continent.id}`} passHref>
         <ChakraLink color="transparent">
           <VStack spacing={4}>
             <Heading
@@ -26,10 +31,10 @@ export function SliderItem() {
               fontSize="3rem"
               fontWeight="bold"
             >
-              Europa
+              {continent.name}
             </Heading>
             <Text color="gray.100" fontSize="1.5rem" fontWeight="bold">
-              O continente mais antigo
+              {continent.call}
             </Text>
           </VStack>
         </ChakraLink>

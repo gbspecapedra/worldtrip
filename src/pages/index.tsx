@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { Flex } from "@chakra-ui/react";
 
@@ -5,8 +6,20 @@ import { Banner } from "../components/Banner";
 import { Header } from "../components/Header";
 import { Carousel } from "../components/Carousel";
 import { TravelType } from "../components/TravelType";
+import { api } from "../services/api";
 
-export default function Home() {
+export type Continent = {
+  id: string;
+  name: string;
+  call: string;
+  callImage: string;
+};
+
+interface HomeProps {
+  continents: Continent[];
+}
+
+export default function Home({ continents }: HomeProps) {
   return (
     <>
       <Head>
@@ -22,8 +35,19 @@ export default function Home() {
         <Header />
         <Banner />
         <TravelType />
-        <Carousel />
+        <Carousel continents={continents} />
       </Flex>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await api
+    .get<Continent[]>(`/continents`)
+    .then((response) => response.data);
+
+  return {
+    props: { continents: response },
+    revalidate: 60 * 60 * 24, // 24 hours
+  };
+};
