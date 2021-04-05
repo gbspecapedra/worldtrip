@@ -3,7 +3,7 @@ import { Flex } from "@chakra-ui/react";
 
 import { Banner } from "../components/Banner";
 import { Header } from "../components/Header";
-import { Slider } from "../components/Slider";
+import { Carousel } from "../components/Carousel";
 import { TravelType } from "../components/TravelType";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
         <Header />
         <Banner />
         <TravelType />
-        <Slider />
+        <Carousel />
       </Flex>
     </>
   );
