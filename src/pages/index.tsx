@@ -8,7 +8,7 @@ import { Carousel } from "../components/Carousel";
 import { TravelType } from "../components/TravelType";
 import { api } from "../services/api";
 
-export type Continent = {
+type Continent = {
   id: string;
   name: string;
   call: string;

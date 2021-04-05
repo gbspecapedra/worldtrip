@@ -31,8 +31,20 @@ export default function ContinentPage({ continent }: ContinentProps) {
           justify="left"
           align="flex-end"
         >
-          <Flex w="100%" maxW={1160} mx="auto" justify="left" mb="59px">
-            <Heading color="gray.50" fontWeight="semibold" fontSize="3rem">
+          <Flex
+            w="100%"
+            h="500px"
+            maxW={1160}
+            mx="auto"
+            justify="left"
+            align="flex-end"
+          >
+            <Heading
+              color="gray.50"
+              fontWeight="semibold"
+              fontSize="3rem"
+              mb="4rem"
+            >
               {continent.name}
             </Heading>
           </Flex>
