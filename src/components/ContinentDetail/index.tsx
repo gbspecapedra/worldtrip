@@ -1,4 +1,6 @@
+import { CircleFlag } from "react-circle-flags";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+
 import {
   Box,
   Flex,
@@ -11,30 +13,13 @@ import {
   Image,
   VStack,
 } from "@chakra-ui/react";
+
 import { ContinentAboutItem } from "./ContinentAboutItem";
-import { CircleFlag } from "react-circle-flags";
 
-type City = {
-  id: string;
-  name: string;
-  image: string;
-  country: string;
-  code: string;
-};
-
-export type Continent = {
-  id: string;
-  name: string;
-  bannerImage: string;
-  about: string;
-  countries: number;
-  languages: number;
-  cities100: number;
-  cities: City[];
-};
+import { ContinentModel } from "../../models";
 
 interface ContinentDetailProps {
-  continent: Continent;
+  continent: ContinentModel;
 }
 
 export function ContinentDetail({ continent }: ContinentDetailProps) {
@@ -52,16 +37,7 @@ export function ContinentDetail({ continent }: ContinentDetailProps) {
           <ContinentAboutItem
             number={continent.cities100}
             label="cidades +100"
-            icon={
-              <Tooltip
-                hasArrow
-                placement="top"
-                label="Cidades entre as 100 mais visitadas do mundo"
-                fontSize="md"
-              >
-                <Icon as={IoMdInformationCircleOutline} color="gray.400" />
-              </Tooltip>
-            }
+            icon={<Icon as={IoMdInformationCircleOutline} color="gray.400" />}
           />
         </Flex>
       </SimpleGrid>
@@ -69,7 +45,7 @@ export function ContinentDetail({ continent }: ContinentDetailProps) {
       <Box>
         <Heading fontWeight="500">Cidades +100</Heading>
 
-        <Wrap spacing="3rem" mt="2.5rem" justify="center">
+        <Wrap spacing="2.5rem" mt="2.5rem" justify="left">
           {continent.cities.map((city) => (
             <Box _hover={{ boxShadow: "2xl" }}>
               <Image

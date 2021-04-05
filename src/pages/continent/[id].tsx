@@ -5,10 +5,12 @@ import { api } from "../../services/api";
 import { Flex, Heading } from "@chakra-ui/react";
 
 import { Header } from "../../components/Header";
-import { Continent, ContinentDetail } from "../../components/ContinentDetail";
+import { ContinentDetail } from "../../components/ContinentDetail";
+
+import { ContinentModel } from "../../models";
 
 interface ContinentProps {
-  continent: Continent;
+  continent: ContinentModel;
 }
 
 export default function ContinentPage({ continent }: ContinentProps) {
@@ -67,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { id } = params;
 
   const response = await api
-    .get<Continent[]>(`continents/${id}`)
+    .get<ContinentModel[]>(`continents/${id}`)
     .then((response) => response.data);
 
   if (!response) {

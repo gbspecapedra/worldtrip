@@ -1,22 +1,18 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import { api } from "../services/api";
+
 import { Flex } from "@chakra-ui/react";
 
 import { Banner } from "../components/Banner";
 import { Header } from "../components/Header";
 import { Carousel } from "../components/Carousel";
 import { TravelType } from "../components/TravelType";
-import { api } from "../services/api";
 
-type Continent = {
-  id: string;
-  name: string;
-  call: string;
-  callImage: string;
-};
+import { ContinentCarouselModel } from "../models";
 
 interface HomeProps {
-  continents: Continent[];
+  continents: ContinentCarouselModel[];
 }
 
 export default function Home({ continents }: HomeProps) {
@@ -43,7 +39,7 @@ export default function Home({ continents }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await api
-    .get<Continent[]>(`/continents`)
+    .get<ContinentCarouselModel[]>(`/continents`)
     .then((response) => response.data);
 
   return {

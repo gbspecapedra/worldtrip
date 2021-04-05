@@ -7,7 +7,7 @@ interface HeaderProps {
 
 export function Header({ isContinent = false }: HeaderProps) {
   return (
-    <Flex as="header" h={20} w="100%" justify="center" align="center">
+    <Flex as="header" h={20} w="100%" justify="center" align="center" py="1rem">
       {isContinent && (
         <Link href="/" passHref>
           <IconButton

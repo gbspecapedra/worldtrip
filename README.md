@@ -44,7 +44,10 @@ This project was developed with the following technologies:
 - [React](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Chakra UI](https://sass-lang.com/)
+- [react-circle-flags](https://github.com/tnovau/react-circle-flags)
+- [react-icons](https://react-icons.github.io/react-icons/)
 - [json-server](https://github.com/typicode/json-server)
+- [axios](https://github.com/axios/axios)
 
 ## 🔖 Layout
 

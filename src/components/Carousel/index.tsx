@@ -1,20 +1,18 @@
-import { GetStaticProps } from "next";
-
-import { Box, Divider, Flex, Heading, Text, VStack } from "@chakra-ui/react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Navigation } from "swiper";
 import { SliderItem } from "./SliderItem";
-import { Continent } from "../../pages";
+
+import { Box, Divider, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+
+import { ContinentCarouselModel } from "../../models";
 
 SwiperCore.use([Navigation, Pagination]);
 
 interface CarouselProps {
-  continents: Continent[];
+  continents: ContinentCarouselModel[];
 }
 
 export function Carousel({ continents }: CarouselProps) {
-  console.log(continents);
   return (
     <Flex as="section" direction="column" w="100%" align="center">
       <Divider w="90px" borderColor="gray.500" size="2px" />
@@ -27,7 +25,7 @@ export function Carousel({ continents }: CarouselProps) {
           </VStack>
         </Heading>
 
-        <Box h="450px" w="100%" maxW={1240} mx="auto">
+        <Box h="450px" w="100%" maxW={1240} mx="auto" mb="4rem">
           <Swiper slidesPerView={1} navigation pagination>
             {continents?.map((continent) => (
               <SwiperSlide key={continent.id}>

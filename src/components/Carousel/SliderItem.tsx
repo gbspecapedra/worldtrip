@@ -8,10 +8,10 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import { Continent } from "../../pages";
+import { ContinentCarouselModel } from "../../models";
 
 interface SliderItemProps {
-  continent: Continent;
+  continent: ContinentCarouselModel;
 }
 
 export function SliderItem({ continent }: SliderItemProps) {
