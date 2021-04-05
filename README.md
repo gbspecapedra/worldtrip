@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <img alt="worldtrip" src="/">
+  <img alt="worldtrip" src="https://user-images.githubusercontent.com/17882257/113624323-dcfe0480-9635-11eb-821c-65baeddd635f.png">
 </p>
 
 <br/>
